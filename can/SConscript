@@ -1,4 +1,4 @@
-Import('env', 'envCython', 'cereal')
+Import('env', 'envCython')
 
 import os
 from opendbc.can.process_dbc import process
