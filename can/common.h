@@ -9,7 +9,7 @@
 #include <capnp/serialize.h>
 
 #ifndef DYNAMIC_CAPNP
-#include "log.capnp.h"
+#include "msg.capnp.h"
 #endif
 
 #define INFO printf

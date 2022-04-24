@@ -8,7 +8,7 @@
 #include <sys/mman.h>
 
 #include "common.h"
-#include "log.capnp.h"
+#include "msg.capnp.h"
 
 
 int64_t get_raw_value(const std::vector<uint8_t> &msg, const Signal &sig) {
