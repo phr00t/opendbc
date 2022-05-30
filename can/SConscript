@@ -14,6 +14,13 @@ for x in sorted(os.listdir('../')):
     env.Depends(dbc, ["dbc.py", "process_dbc.py"])
     dbcs.append(dbc)
 
+# Build Capnp Definitions
+msg_capnp = env.Command(
+    target=['msg.capnp.c++', 'msg.capnp.h'],
+    source=["msg.capnp"],
+    action='capnp compile -oc++ $SOURCE'
+)
+
 libdbc = env.SharedLibrary('libdbc', ["dbc.cc", "parser.cc", "packer.cc", "common.cc"]+dbcs, LIBS=["capnp", "kj"])
 
 # Build packer and parser
