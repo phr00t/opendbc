@@ -59,7 +59,7 @@ bool MessageState::parse(uint64_t sec, const std::vector<uint8_t> &dat) {
     }
 
     if (checksum_failed || counter_failed) {
-      LOGE("0x%X message checks failed, checksum failed %d, counter failed %d", address, checksum_failed, counter_failed);
+      WARN("0x%X message checks failed, checksum failed %d, counter failed %d", address, checksum_failed, counter_failed);
       return false;
     }
 
@@ -290,9 +290,9 @@ void CANParser::UpdateValid(uint64_t sec) {
     if (state.check_threshold > 0 && (missing || timed_out)) {
       if (show_missing && !bus_timeout) {
         if (missing) {
-          LOGE("0x%X NOT SEEN", state.address);
+          WARN("0x%X NOT SEEN", state.address);
         } else if (timed_out) {
-          LOGE("0x%X TIMED OUT", state.address);
+          WARN("0x%X TIMED OUT", state.address);
         }
       }
       _valid = false;
