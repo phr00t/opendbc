@@ -13,7 +13,7 @@
 #include "msg.capnp.h"
 #endif
 
-#include "opendbc/can/common_dbc.h"
+#include "common_dbc.h"
 
 #define INFO printf
 #define WARN printf

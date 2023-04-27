@@ -300,9 +300,9 @@ void CANParser::UpdateValid(uint64_t sec) {
     if (state.check_threshold > 0 && (missing || timed_out)) {
       if (show_missing && !bus_timeout) {
         if (missing) {
-          LOGE("0x%X '%s' NOT SEEN", state.address, state.name.c_str());
+          WARN("0x%X '%s' NOT SEEN", state.address, state.name.c_str());
         } else if (timed_out) {
-          LOGE("0x%X '%s' TIMED OUT", state.address, state.name.c_str());
+          WARN("0x%X '%s' TIMED OUT", state.address, state.name.c_str());
         }
       }
       _valid = false;
